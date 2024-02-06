@@ -115,4 +115,4 @@ Time complexity : O(n^2)
 Mathematically,
 Let `f` and `g` be functions of `n`, where n is natural no denoting size or steps of the algorithm then:
 	f(n) = O(g(n))
-		iff  f(n) <= c.g(n)  , where `n >= n_0`, `c > 0`, n`_0 >= 1`
+		iff  f(n) <= c.g(n)  , where `n >= n0`, `c > 0`, `n0 >= 1`
