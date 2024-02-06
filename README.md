@@ -97,3 +97,22 @@ In easy words, It is used to mathematically calculate the running time of any op
 
 # Big O Notation
 The notation O(n) is the formal/mathematical way to express the upper bound (worst case) of an algorithm's running time.
+- It measures the worst case time complexity or the longest amount of time an algorithm can possibly take to complete.
+Following is a list of some common asymptotic notations:
+1. Constant time - O(1)
+2. Linear - O(n)
+3. Logarithmic - O(log n)
+4. Quadratic - O (n^2)
+5. Cubic - O(n^3)
+How to find out the Big O Notation?
+1. Find the fastest growing variable term.
+2. Eliminate the coefficients/constant terms.
+e.g. T = n^2 + 2n
+Time complexity : O(n^2)
+
+- Big O Notation specifically describes worst case scenario.
+- It represents the upper bound running time complexity of an algorithm.
+Mathematically,
+Let `f` and `g` be functions of `n`, where n is natural no denoting size or steps of the algorithm then:
+	f(n) = O(g(n))
+		iff  f(n) <= c.g(n)  , where `n >= n_0`, `c > 0`, n`_0 >= 1`
