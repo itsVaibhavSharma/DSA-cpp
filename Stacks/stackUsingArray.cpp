@@ -1,0 +1,106 @@
+#include <iostream>
+using namespace std;
+const int s = 10;
+int stack[s], tos = -1;
+bool stack_empty();
+bool stack_full();
+void push();
+void pop();
+void traversal();
+
+int main()
+{
+    int choice;
+    do
+    {
+        cout << "Enter 1 for PUSH AT TOP OF STACK" << endl;
+        cout << "Enter 2 for POP AT TOP OF STACK" << endl;
+        cout << "Enter 3 for TRAVERSAL" << endl;
+        cout << "Enter 4 EXIT" << endl;
+        cout << "Enter Function no.: ";
+        cin >> choice;
+        switch (choice)
+        {
+
+        case 1:
+            push();
+            break;
+
+        case 2:
+            pop();
+            break;
+
+        case 3:
+            traversal();
+            break;
+
+        case 4:
+            return 0;
+        default:
+            cout << "Enter valid Function no. (between 1 to 4)." << endl;
+        }
+    } while (1);
+
+    return 0;
+}
+
+bool stack_empty()
+{
+    if (tos == -1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+bool stack_full()
+{
+    if (tos == s - 1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+void push()
+{
+    if (stack_full())
+    {
+        cout << "Stack is full" << endl;
+    }
+    else
+    {
+        cout << "Enter value" << endl;
+        cin >> stack[++tos];
+    }
+}
+void pop()
+{
+    if (stack_empty())
+    {
+        cout << "Stack is empty" << endl;
+    }
+    else
+    {
+        cout << "Deleted element is" << endl;
+        cout << stack[tos--] << endl;
+    }
+}
+void traversal()
+{
+    if (stack_empty())
+    {
+        cout << "Empty stack" << endl;
+    }
+    else
+    {
+        for (int i = 0; i <= tos; i++)
+        {
+            cout << stack[i] << endl;
+        }
+    }
+}

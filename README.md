@@ -112,7 +112,28 @@ Time complexity : O(n^2)
 
 - Big O Notation specifically describes worst case scenario.
 - It represents the upper bound running time complexity of an algorithm.
+**1 < log n < sqrt n < n < n log n < n^2 < n^3 < ... < 2^n < n^n**
+
 Mathematically,
 Let `f` and `g` be functions of `n`, where n is natural no denoting size or steps of the algorithm then:
 	f(n) = O(g(n))
 		iff  f(n) <= c.g(n)  , where `n >= n0`, `c > 0`, `n0 >= 1`
+			n0 is the point above which the upper limit is always gonna be upper.
+
+Example: f(n) = 2n+3
+	g(n) = n
+	f(n) <= c.g(n)
+	2n+3 <= c.n
+	let's take c=5, n=1
+	5 <=5 satisfies.
+	Method can be: assume value of n and find value of c or vice versa
+	Let c=4, n =1
+	5 <=4 (not true)
+	Let c=4, n=2
+	7 <= 8 (true)
+	Let c=4, n=3
+	9 <= 12 (true)
+	After n=2, for all values of n, the condition is always true.
+	
+	![[Pasted image 20240206225833.png]]
+
