@@ -16,15 +16,12 @@ struct node
     node *next;
 } *head = NULL;
 
-node *node1 = new node;
+
 
 int main()
 {
 
-    head = node1;
-
-    node1->data = 23;
-    node1->next = NULL;
+    
 
     int choice;
 
