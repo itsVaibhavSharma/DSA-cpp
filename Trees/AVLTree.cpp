@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Binary tree
 struct node
 {
     node *leftchild;
@@ -25,41 +24,27 @@ node *leftRotate(node *y);
 node *rightRotate(node *y);
 int getBF(node *r);
 
-// insertion
-// traversal - 4
-// search
-// printing
-// deletion
-
 int main()
 {
 
-    //           20
-    //     10           25
-    // 5       15    23     30
+    cout << "Enter 1 for Insertion" << endl
+         << "Enter 2 for Pre-Order Traversal" << endl
+         << "Enter 3 for In-Order Traversal" << endl
+         << "Enter 4 for Post-Order Traversal" << endl
+         << "Enter 5 for Level-Order Traversal" << endl
+         << "Enter 6 for print" << endl
+         << "Enter 7 for Search (Iterative)" << endl
+         << "Enter 8 for Search (Recursive)" << endl
+         << "Enter 9 for Height" << endl
+         << "Enter 10 for Print Given Level" << endl
+         << "Enter 11 for Deletion" << endl
+         << "Enter 12 to clear screen" << endl
+         << "Enter 0 to EXIT" << endl;
 
-    // 1 2 4 5 3 6 7
-    // 4 2 5 1 6 3 7
-    // 4 5 2 6 7 3 1
-
-      int ch;
+    int ch;
 
     do
     {
-
-        cout << "Enter 1 for Insertion" << endl
-             << "Enter 2 for Pre-Order Traversal" << endl
-             << "Enter 3 for In-Order Traversal" << endl
-             << "Enter 4 for Post-Order Traversal" << endl
-             << "Enter 5 for Level-Order Traversal" << endl
-             << "Enter 6 for print" << endl
-             << "Enter 7 for Search (Iterative)" << endl
-             << "Enter 8 for Search (Recursive)" << endl
-             << "Enter 9 for Height" << endl
-             << "Enter 10 for Print Given Level" << endl
-             << "Enter 11 for Deletion" << endl
-             << "Enter 12 to clear screen" << endl
-             << "Enter 0 to EXIT" << endl;
 
         cout << "Enter Function no.: ";
         cin >> ch;
@@ -153,7 +138,6 @@ int main()
     return 0;
 }
 
-// inorder ka ulta
 void print(node *r, int space)
 {
     if (r == NULL)
@@ -242,13 +226,7 @@ int getBF(node *r)
 
 node *leftRotate(node *y)
 {
-    /*
-            y
-        T1      x
-            T2       z
-                  T3    T4
 
-    */
     node *x = y->rightchild;
     node *t2 = x->leftchild;
     x->leftchild = y;
@@ -353,36 +331,6 @@ node *searchRec(node *r, int val)
 
 int height(node *r)
 {
-    //               20
-    //         10             25
-    //     5       15     23        30
-    //                      24
-
-    /*
-    20 lh = 1
-        10 lh = 0
-            5 lh =-1
-              rh = -1
-           rh = 0
-            15 lh = -1
-               rh = -1
-        rh = 2
-            25 lh= 1
-                23 lh =-1
-                   rh = 0
-                    24 lh =-1
-                       rh =-1
-
-                rh = 0
-                    30 lh = -1
-                       rh = -1
-
-
-
-    rh +1 = 3
-
-
-    */
 
     if (r == NULL)
     {
@@ -405,10 +353,6 @@ int height(node *r)
 
 void printGivenLevel(node *r, int level)
 {
-    //               20                     //level0
-    //         10             25            //level1
-    //     5       15     23        30      //level2
-    //                      24              //level3
 
     if (r == NULL)
     {
@@ -427,25 +371,6 @@ void printGivenLevel(node *r, int level)
 
 node *deletion(node *r, int value)
 {
-
-    //               20                     //level0
-    //         10             25            //level1
-    //     5       15     23        30      //level2
-    //                      24              //level3
-
-    //               20                     //level0
-    //         10             25            //level1
-    //     5       15     24        30      //level2
-    //                                      //level3
-
-    //               23                     //level0
-    //         10             25            //level1
-    //     5       15     24        30      //level2
-    //                                      //level3
-
-    // no child
-    // single child
-    // double child
 
     if (r == NULL)
     {
@@ -498,24 +423,6 @@ node *deletion(node *r, int value)
     }
 
     return r;
-
-    //               23                     //level0
-    //         10             25            //level1
-    //     5       15     24       30       //level2
-    //                                      //level3
-
-    /*
-    main
-    20 |
-        temp =23
-        r (20) = 23
-        r(23) R = 25
-            25|
-                25 L = 24
-                    23 |
-
-    23 main
-    */
 }
 
 node *minValue(node *r)

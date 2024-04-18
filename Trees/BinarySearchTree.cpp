@@ -40,56 +40,25 @@ int main()
     // 4 2 5 1 6 3 7
     // 4 5 2 6 7 3 1
 
-    node *n1 = new node;
-    node *n2 = new node;
-    node *n3 = new node;
-    node *n4 = new node;
-    node *n5 = new node;
-    node *n6 = new node;
-    node *n7 = new node;
-
-    root = n1;
-    n1->data = 20;
-    n1->leftchild = n2;
-    n1->rightchild = n3;
-    n2->data = 10;
-    n3->data = 25;
-    n2->leftchild = n4;
-    n2->rightchild = n5;
-    n3->leftchild = n6;
-    n3->rightchild = n7;
-    n4->data = 5;
-    n5->data = 15;
-    n6->data = 23;
-    n7->data = 30;
-    n4->leftchild = NULL;
-    n4->rightchild = NULL;
-    n5->leftchild = NULL;
-    n5->rightchild = NULL;
-    n6->leftchild = NULL;
-    n6->rightchild = NULL;
-    n7->leftchild = NULL;
-    n7->rightchild = NULL;
-
     int ch;
+
+    cout << "Enter 1 for Insertion (Iterative)" << endl
+         << "Enter 2 for Pre-Order Traversal" << endl
+         << "Enter 3 for In-Order Traversal" << endl
+         << "Enter 4 for Post-Order Traversal" << endl
+         << "Enter 5 for Level-Order Traversal" << endl
+         << "Enter 6 for Insertion (Recursive)" << endl
+         << "Enter 7 for print" << endl
+         << "Enter 8 for Search (Iterative)" << endl
+         << "Enter 9 for Search (Recursive)" << endl
+         << "Enter 10 for Height" << endl
+         << "Enter 11 for Print Given Level" << endl
+         << "Enter 12 for Deletion" << endl
+         << "Enter 0 to EXIT" << endl;
 
     do
     {
 
-        cout << "Enter 1 for Insertion (Iterative)" << endl
-             << "Enter 2 for Pre-Order Traversal" << endl
-             << "Enter 3 for In-Order Traversal" << endl
-             << "Enter 4 for Post-Order Traversal" << endl
-             << "Enter 5 for Level-Order Traversal" << endl
-             << "Enter 6 for Insertion (Recursive)" << endl
-             << "Enter 7 for print" << endl
-             << "Enter 8 for Search (Iterative)" << endl
-             << "Enter 9 for Search (Recursive)" << endl
-             << "Enter 10 for Height" << endl
-             << "Enter 11 for Print Given Level" << endl
-             << "Enter 12 for Deletion" << endl
-             << "Enter 0 to EXIT" << endl;
-        
         cout << "Enter Function no.: ";
         cin >> ch;
 
