@@ -130,7 +130,6 @@ void insert_beg()
 
 void insert_end()
 {
-
     node *p = new node;
     cout << "Enter data for new node: ";
     cin >> p->data;
@@ -207,6 +206,7 @@ void insert_specific()
                 pos--;
                 temp = temp->next;
             }
+            // (head) N1 -> N2 -> N3 -> N4 -> NULL
             p->next = temp->next;
             (temp->next)->prev = p;
             p->prev = temp;
@@ -250,6 +250,7 @@ void delete_end()
     }
     else
     {
+        // (head) N1 -> N2 -> N3 -> N4 -> NULL
         node *temp = head;
         while ((temp->next)->next != NULL)
         {
@@ -308,7 +309,7 @@ void delete_specific()
                 pos--;
                 temp = temp->next;
             }
-
+// (head) N1 -> N2 -> N3 -> N4 -> NULL
             cout << "Deleted node contains: " << (temp->next)->data << endl;
 
             if (position == count)

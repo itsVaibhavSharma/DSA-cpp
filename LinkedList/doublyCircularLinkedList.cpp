@@ -93,7 +93,8 @@ void traversal()
 void insert_beg()
 {
 
-    node *p = new node; 
+    // N4 <-(head) N1 -> N2 -> N3 -> N4 -> head
+    node *p = new node;
     cout << "Enter data for new node: ";
     cin >> p->data;
 
@@ -129,12 +130,12 @@ void insert_end()
     }
     else
     {
+        // N4 <-(head) N1 -> N2 -> N3 -> N4 -> head
 
         p->prev = head->prev;
         p->next = head;
         (head->prev)->next = p;
         head->prev = p;
-
     }
 }
 
@@ -162,8 +163,9 @@ void insert_specific()
             count++;
             temp = temp->next;
         }
+        count++;
 
-        if (pos > count + 2)
+        if (pos > count + 1)
         {
             cout << "Enter valid Position. " << endl;
         }
@@ -188,11 +190,10 @@ void insert_specific()
                     pos--;
                     temp = temp->next;
                 }
-
+                // N4 <-(head) N1 -> N2 -> N3 -> N4 -> head
                 p->next = temp->next;
                 p->prev = temp;
                 (temp->next)->prev = p;
-
                 temp->next = p;
             }
         }
@@ -213,9 +214,8 @@ void delete_beg()
     }
     else
     {
-
         cout << "Deleted node contains: " << head->data << endl;
-
+        // N4 <-(head) N1 -> N2 -> N3 -> N4 -> head
         (head->next)->prev = head->prev;
         (head->prev)->next = head->next;
         head = head->next;
@@ -236,9 +236,8 @@ void delete_end()
     }
     else
     {
-
         cout << "Deleted node contains: " << (head->prev)->data << endl;
-
+        // N4 <-(head) N1 -> N2 -> N3 -> N4 -> head
         ((head->prev)->prev)->next = head;
         head->prev = (head->prev)->prev;
     }
@@ -263,8 +262,9 @@ void delete_specific()
             count++;
             temp = temp->next;
         }
+        count++;
 
-        if (pos > count + 1)
+        if (pos > count)
         {
             cout << "Limit exceeded!!" << endl;
         }
@@ -284,12 +284,13 @@ void delete_specific()
                     pos--;
                     temp = temp->next;
                 }
-
+                // N4 <-(head) N1 -> N2 -> N3 -> N4 -> head
                 cout << "Deleted node contains: " << (temp->next)->data << endl;
 
-                if (position == count + 1)
+                if (position == count)
                 {
                     temp->next = head;
+                    head->prev = temp;
                 }
                 else
                 {
@@ -321,7 +322,8 @@ void display()
             temp = temp->next;
         }
 
-        if (pos > count + 1)
+        count++;
+        if (pos > count)
         {
             cout << "Entered position does not exist." << endl;
         }

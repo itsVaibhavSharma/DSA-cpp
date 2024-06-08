@@ -1,15 +1,12 @@
 #include <iostream>
 using namespace std;
-// ax^m+bx^n+cx^0
-// pol1,pol2, add, sub
 
 void create();
 void addition();
 void subtraction();
 void display();
 
-struct node
-{
+struct node {
     float coe;
     int exp;
     node *next;
@@ -47,7 +44,6 @@ int main()
 
         case 5:
             return 0;
-            // break;
 
         default:
             cout << "Enter correct function no." << endl;
@@ -59,7 +55,7 @@ int main()
 
 void display()
 {
-    // coe1 x ^ exp1 + coe2
+
     for (int i = 0; i < 4; i++)
     {
 
@@ -113,7 +109,7 @@ void create()
 
         do
         {
-            // coe //exp
+
             node *a = new node;
             cout << "Enter coefficient: ";
             cin >> a->coe;
@@ -131,7 +127,7 @@ void create()
                 current = a;
             }
 
-                        cout << "Do you want to add another term? (Y/N): ";
+            cout << "Do you want to add another term? (Y/N): ";
             cin >> newT;
         } while (newT == 'Y');
     }
@@ -140,10 +136,7 @@ void create()
 void addition()
 {
     node *t1 = p[0], *t2 = p[1], *t3 = p[2];
-    // 3x^3+4x^2+5x^0
-    // 1x^4+9x^2+4x^1+8x^0
     node *current = NULL;
-
     while (t1 != NULL && t2 != NULL)
     {
         if (t1->exp < t2->exp)
@@ -205,8 +198,7 @@ void addition()
             t2 = t2->next;
         }
     }
-    // 3x^3+4x^2+5x^0
-    // 1x^4+9x^2+4x^1+8x^0
+
     if (t1 != NULL)
     {
         while (t1 != NULL)
@@ -255,8 +247,7 @@ void addition()
 void subtraction()
 {
     node *t1 = p[0], *t2 = p[1], *t3 = p[3];
-    // 3x^3+4x^2+5x^0
-    // 1x^4+9x^2+4x^1+8x^0
+
     node *current = NULL;
 
     while (t1 != NULL && t2 != NULL)
@@ -320,8 +311,7 @@ void subtraction()
             t2 = t2->next;
         }
     }
-    // 3x^3+4x^2+5x^0
-    // 1x^4+9x^2+4x^1+8x^0
+
     if (t1 != NULL)
     {
         while (t1 != NULL)

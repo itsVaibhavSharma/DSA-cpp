@@ -104,21 +104,18 @@ void traversal()
 }
 
 void insert_beg()
-
 {
     node *p = new node; 
     cout << "Enter data for new node: ";
     cin >> p->data;
 
     if (head == NULL)
-
     {
         head = p;
         p->next = p;
     }
     else
     {
-
         p->next = head;
         node *temp = head;
         while (temp->next != head)
@@ -173,8 +170,9 @@ void insert_specific()
         count++;
         temp = temp->next;
     }
+    count++;
 
-    if ((pos < 1) || (pos > count + 2))
+    if ((pos < 1) || (pos > count + 1))
     {
         cout << "Enter valid position." << endl;
     }
@@ -204,6 +202,7 @@ void insert_specific()
         }
         else
         {
+            // (head) N1 -> N2 -> N3 -> N4 -> head
 
             temp = head;
             while (pos > 2)
@@ -240,7 +239,6 @@ void delete_beg()
         temp->next = head->next;
         head = head->next;
     }
-
 }
 
 void delete_end()
@@ -257,6 +255,8 @@ void delete_end()
     }
     else
     {
+        // (head) N1 -> N2 -> N3 -> N4 -> head
+        // (head) N1 -> N2 -> N3 -> head
 
         node *temp = head;
         while ((temp->next)->next != head)
@@ -281,8 +281,9 @@ void delete_specific()
         count++;
         temp = temp->next;
     }
+    count++;
 
-    if ((pos < 1) || (pos > count + 1))
+    if ((pos < 1) || (pos > count))
     {
         cout << "Limit exceeding!!" << endl;
     }
@@ -341,14 +342,14 @@ void display()
         count++;
         temp = temp->next;
     }
+    count++;
 
-    if ((pos < 1) || (pos > count + 1))
+    if ((pos < 1) || (pos > count))
     {
         cout << "Entered position does not exist." << endl;
     }
     else
     {
-
         if (head == NULL)
         {
             cout << "LinkedList is empty." << endl;

@@ -80,7 +80,7 @@ void traversal()
     }
     else
     {
-        while ((temp->next) != NULL)
+        while (temp->next != NULL)
         {
             cout << temp->data << " ";
             temp = temp->next;
@@ -128,8 +128,27 @@ void insert_end()
     }
 }
 
+/*
+void insert_end(){
+    CREATE NEW NODE node* p = new node
+    p -> next = NULL;
+    INPUT p-> data;
+    IF head == NULL
+        head = p;
+    ELSE
+        CREATE NEW NODE node*temp = head;
+        WHILE temp-> next != NULL
+             temp = temp-> next;
+        temp -> next = p;
+}
+
+
+
+*/
+
 void insert_specific()
 {
+    // (head) N1 -> N2 -> N3 -> N4 -> NULL
 
     int pos, count = 0;
     node *p = new node;
@@ -145,12 +164,14 @@ void insert_specific()
         temp = temp->next;
     }
 
-    if (pos > count + 1)
+    if (pos < 1 || pos > count + 1)
     {
         cout << "Sahi position dalo " << endl;
     }
     else
     {
+        // pos =3
+        // (head) N1 -> N2 -> N3 -> N4 -> NULL
 
         if (pos == 1)
         {
@@ -187,6 +208,25 @@ void delete_beg()
     }
 
 }
+/*
+void delete_beg(){
+    IF head == NULL
+        PRINT "linkedlist is empty"
+    ELSE
+        PRINT "DELETED NODE: " + head -> data;
+        head = head-> next;
+}
+
+1. start
+2. If head == null then print error
+3. else 
+     deleted node : head-> data
+     head = head-> next
+4. end
+
+
+
+*/
 
 void delete_end()
 {
@@ -203,6 +243,7 @@ void delete_end()
     }
     else
     {
+        // (head) N1 -> N2 -> N3 -> N4 -> NULL
         node *temp = head;
         while ((temp->next)->next != NULL)
         {
@@ -215,6 +256,7 @@ void delete_end()
 
 void delete_specific()
 {
+    // (head) N1 -> N2 -> N3 -> N4 -> NULL
 
     int pos, count = 0;
     cout << "Enter the position for deletion: ";
@@ -227,12 +269,13 @@ void delete_specific()
         temp = temp->next;
     }
 
-    if (pos > count)
+    if (pos < 1 || pos > count)
     {
         cout << "Limit exceeding!!" << endl;
     }
     else
     {
+        // (head) N1 -> N2 -> N3 -> N4 -> NULL
         if (head == NULL)
         {
             cout << "LinkedList is Empty. Deletion is not possible." << endl;
@@ -270,7 +313,7 @@ void display()
         temp = temp->next;
     }
 
-    if (pos > count)
+    if (pos < 1 || pos > count)
     {
         cout << "Entered position does not exist." << endl;
     }
@@ -283,6 +326,7 @@ void display()
         }
         else
         {
+            // (head) N1 -> N2 -> N3 -> N4 -> NULL
 
             temp = head;
             while (pos > 1)
